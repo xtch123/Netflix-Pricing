@@ -32,12 +32,12 @@ export default function Home() {
   return (
     <CurrencyDataTable path='netflix?apiKey=1' usePage={false} tableHeader={
       <TableHeader>
-        <TableColumn key="code">Country</TableColumn>
-        <TableColumn key="Mobile">Mobile</TableColumn>
-        <TableColumn key="Basic">Basic</TableColumn>
-        <TableColumn key="Standard">Standard</TableColumn>
-        <TableColumn key="Standard with ads">Standard with ads</TableColumn>
-        <TableColumn key="Premium">Premium</TableColumn>
+        <TableColumn key="code" allowsSorting>Country</TableColumn>
+        <TableColumn key="Mobile" allowsSorting>Mobile</TableColumn>
+        <TableColumn key="Basic" allowsSorting>Basic</TableColumn>
+        <TableColumn key="Standard" allowsSorting>Standard</TableColumn>
+        <TableColumn key="Standard with ads" allowsSorting>Standard with ads</TableColumn>
+        <TableColumn key="Premium" allowsSorting>Premium</TableColumn>
       </TableHeader>} renderCell={renderCell} />
   );
 }

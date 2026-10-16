@@ -22,7 +22,7 @@ import CardPage from "@/app/components/CardPage";
 import CardCurrency from "@/app/components/CardCurrency";
 
 const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then((res) => res.json().then(j => j.data));
-const url: string = 'https://api.dy.ax/v1/finance'
+const url: string = '/api/finance'
 interface Prop {
     path: string
     usePage: boolean

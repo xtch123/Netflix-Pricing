@@ -34,7 +34,7 @@ interface Prop {
 }
 
 export default function CurrencyDataTable({ path, usePage, tableHeader, renderCell }: Prop) {
-    const [currency, setCurrency] = useState("USD");
+    const [currency, setCurrency] = useState("CNY");
     const [page, setPage] = useState(1);
     const [filterValue, setFilterValue] = useState("");
     const [sortDescriptor, setSortDescriptor] = useState<{

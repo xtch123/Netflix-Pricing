@@ -6,7 +6,7 @@
 
 原版项目的独立复活版本，保留简洁的查询界面，不再依赖原作者已停用的 API。
 
-[![在线访问](https://img.shields.io/badge/🌐_在线访问-nf.19960422.xyz-2563eb?style=for-the-badge)](https://nf.19960422.xyz/)
+[![Website](https://img.shields.io/badge/Website-nf.19960422.xyz-2563eb?style=for-the-badge)](https://nf.19960422.xyz/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/Code_License-MIT-green?style=flat-square)](LICENSE)
 
@@ -103,9 +103,12 @@ ingress:
 ```bash
 # 在 VPS 上执行；注意构建期间需要一定磁盘空间
 systemctl stop nfprice
-runuser -u nfprice -- sh -c 'cd /opt/netflix-pricing && git pull --ff-only origin master && npm run build'
-systemctl start nfprice
-systemctl is-active nfprice
+if runuser -u nfprice -- sh -c 'cd /opt/netflix-pricing && git pull --ff-only origin master && npm run build'; then
+  systemctl start nfprice
+  systemctl is-active nfprice
+else
+  echo '更新或构建失败，请检查日志后再处理服务'
+fi
 ```
 
 > 如果构建失败，请先检查日志和版本，不要把失败版本直接视为部署成功。磁盘较小的 VPS 应预留构建空间。

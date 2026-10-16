@@ -29,7 +29,7 @@ type SortDirection = "ascending" | "descending";
 interface Prop {
     path: string;
     usePage: boolean;
-    tableHeader: React.ReactNode;
+    tableHeader: React.ReactElement;
     renderCell: Function;
 }
 
